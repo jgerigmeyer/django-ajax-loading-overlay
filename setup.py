@@ -26,7 +26,7 @@ setup(
     long_description=long_description,
     author="Jonny Gerig Meyer",
     author_email="jonny@oddbird.net",
-    url="{url}",
+    url="https://github.com/jgerigmeyer/django-ajax-loading-overlay/",
     packages=["ajax_loading_overlay"],
     package_data={
         "ajax_loading_overlay": [
