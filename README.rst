@@ -28,15 +28,18 @@ Removing the loading overlay (usually upon success of the Ajax call)::
 
     $('#target').loadingOverlay('remove');
 
-Options can be passed to override the default loading class ('loading'), overlay class ('overlay'), and/or loading text('loading...')::
+Options can be passed to override the default loading class ('loading'), overlay class ('overlay'), loading text('loading...'), and/or function to return loading text padding-top::
 
     $('#target').loadingOverlay({
         loadingClass: 'myLoadingClass',
         overlayClass: 'myOverlayClass',
-        loadingText: 'Loading. Please Wait.'
+        loadingText: 'Loading. Please Wait.',
+        paddingTop: function (target) {
+            return ((target.outerHeight() - parseInt(target.css('line-height'), 10)) / 2).toString() + 'px';
+        }
     });
 
-If options are passed when initializing the loading overlay, the same options must be passed when removing that overlay (though `loadingText` is not used by the `remove` method)::
+If `loadingClass` or `overlayClass` options are passed when initializing the loading overlay, the same options must be passed when removing that overlay::
 
     $('#target').loadingOverlay('remove', {
         loadingClass: 'myLoadingClass',
